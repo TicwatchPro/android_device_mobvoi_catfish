@@ -20,14 +20,14 @@ $(call inherit-product, vendor/lineage/config/common_mini.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := mobvoi
-PRODUCT_DEVICE := Mobvoi TicWatch Pro
-PRODUCT_MANUFACTURER := Mobvoi
+PRODUCT_DEVICE := catfish
+PRODUCT_MANUFACTURER := mobvoi
 PRODUCT_NAME := lineage_catfish
 PRODUCT_MODEL := TicWatch Pro
 
 PRODUCT_GMS_CLIENTID_BASE := android-mobvoi
 TARGET_VENDOR := mobvoi
-TARGET_VENDOR_PRODUCT_NAME := WF12096
+TARGET_VENDOR_PRODUCT_NAME := catfish
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="catfish-user 9 PWDD.190617.074 6586999 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
