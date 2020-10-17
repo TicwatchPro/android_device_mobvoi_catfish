@@ -49,6 +49,12 @@ TARGET_SCREEN_WIDTH := 400
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     gralloc.msm8909 \
     hwcomposer.msm8909 \
     memtrack.msm8909
@@ -57,6 +63,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
+
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # GPS configurations
 PRODUCT_COPY_FILES += \
@@ -84,6 +95,7 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service \
     android.hardware.nfc@1.1-impl \
     libnfc-nci \
     libnfc_nci_jni \
@@ -131,6 +143,13 @@ PRODUCT_PACKAGES += \
     init.qcom.nanohub.rc \
     init.usb.configfs.rc \
     ueventd.catfish.rc
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-impl \
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    wpa_supplicant
 
 # Wi-Fi configurations
 PRODUCT_COPY_FILES += \

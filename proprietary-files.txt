@@ -74,6 +74,7 @@ lib/libmmosal.so
 # Media-Hardware
 
 # NFC
+vendor/lib/hw/nfc_nci.st21.default.so
 
 # Postprocessing
 lib/vendor.display.color@1.0.so
@@ -98,6 +99,14 @@ vendor/lib/libsmemlog.so
 vendor/lib/libsubsystem_control.so
 
 # Radio
+vendor/bin/netmgrd
+vendor/bin/qti
+vendor/bin/rmt_storage
+vendor/bin/tftp_server
+vendor/lib/libconfigdb.so
+vendor/lib/libmdmdetect.so
+vendor/lib/libnetmgr.so
+vendor/lib/libqcmaputils.so
 
 # Sensors
 vendor/lib/libhubconnection.so
