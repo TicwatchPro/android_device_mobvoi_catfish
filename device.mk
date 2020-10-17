@@ -45,6 +45,16 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.dtd:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_V1_0.dtd
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.catfish \
+    init.catfish.rc \
+    init.common.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    init.foreground.sh \
+    init.qcom.audio.sh
+
 # Wi-Fi configurations
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal \

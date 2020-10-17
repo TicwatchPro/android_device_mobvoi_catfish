@@ -1,0 +1,7 @@
+import /vendor/etc/init/hw/init.common.rc
+
+# added for certification models
+on property:ro.oem.tw.cmodel=WF12096
+    setprop ro.boot.hardware.sku WF12096
+on property:ro.oem.tw.cmodel=WF12106
+    setprop ro.boot.hardware.sku WF12106
