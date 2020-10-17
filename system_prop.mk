@@ -13,6 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Dalvik VM
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapmaxfree=2m \
+    dalvik.vm.heapgrowthlimit=96m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heapstartsize=8m
+
 # Expect bootloader
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.expect.bootloader=catfish-37.33.31.33.39
