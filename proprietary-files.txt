@@ -1,0 +1,51 @@
+
+# Audio
+
+# Camera
+
+# DRM
+
+# Display-Hardware
+
+# Firmware
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/BCM43430B0.hcd
+vendor/firmware/fw_bcmdhd.bin
+vendor/firmware/fw_bcmdhd_apsta.bin
+vendor/firmware/it7259.cfg
+vendor/firmware/it7259.fw
+vendor/firmware/nanohub.full.catshark.20033010.bin
+
+# GPS
+
+# GPS-Hardware
+
+# Graphics
+
+# Listen
+
+# Media
+lib/libmmosal.so
+
+# Media-Hardware
+
+# Perf
+
+# Postprocessing
+lib/vendor.display.color@1.0.so
+lib/vendor.display.postproc@1.0.so
+
+# QMI
+
+# Radio
+
+# Sensors
+
+# Time
+
+# WiFi
+
+# rootdir
+
+# Misc
