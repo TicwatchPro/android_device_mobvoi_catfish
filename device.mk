@@ -15,6 +15,14 @@
 
 DEVICE_PATH := device/mobvoi/catfish
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio.effect@2.0-impl \
+    audio.primary.msm8909 \
+    audio.r_submix.default
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
@@ -24,9 +32,29 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(DEVICE_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    bluetooth.default.so \
+    libbt-hci \
+    libbt-vendor \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 400
 TARGET_SCREEN_WIDTH := 400
+
+# Display
+PRODUCT_PACKAGES += \
+    gralloc.msm8909 \
+    hwcomposer.msm8909 \
+    memtrack.msm8909
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # GPS configurations
 PRODUCT_COPY_FILES += \
