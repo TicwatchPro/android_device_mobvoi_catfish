@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device name="Android">
+    <item name="none">0</item>
+    <item name="screen.on">22.4</item>
+    <item name="screen.full">24.8</item>
+    <item name="bluetooth.active">130.5</item>
+    <item name="bluetooth.on">0.22</item>
+    <item name="wifi.on">0.21</item>
+    <item name="wifi.active">160.8</item>
+    <item name="wifi.scan">41.5</item>
+    <item name="gps.on">16.5</item>
+    <array name="cpu.clusters.cores">
+        <value>2</value>
+    </array>
+    <array name="cpu.core_speeds.cluster0">
+        <value>800000</value>
+    </array>
+    <array name="cpu.core_power.cluster0">
+        <value>72</value>
+    </array>
+    <item name="cpu.suspend">4.3</item>
+    <item name="battery.capacity">415</item>
+    <item name="wifi.controller.idle">0.016</item>
+    <item name="wifi.controller.rx">29.3</item>
+    <item name="wifi.controller.tx">196</item>
+    <array name="wifi.controller.tx_levels">
+        <value>304</value>
+        <value>250</value>
+        <value>167</value>
+        <value>163</value>
+    </array>
+    <item name="wifi.controller.voltage">3800</item>
+</device>
