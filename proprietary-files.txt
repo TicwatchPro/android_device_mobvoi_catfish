@@ -1,16 +1,42 @@
 
-# Audio
+# ADSP
+vendor/bin/adsprpcd
+vendor/lib/libadsprpc.so
 
-# Camera
+# Audio
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/soundfx/libbundlewrapper.so
+vendor/lib/soundfx/libdownmix.so
+vendor/lib/soundfx/libdynproc.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libldnhncr.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libreverbwrapper.so
+vendor/lib/soundfx/libreverbwrapper.so
 
 # DRM
+vendor/bin/qseecomd
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
 
 # Display-Hardware
 
 # Firmware
-vendor/firmware/BCM43430B0.hcd
-vendor/firmware/fw_bcmdhd.bin
-vendor/firmware/fw_bcmdhd_apsta.bin
 vendor/firmware/it7259.cfg
 vendor/firmware/it7259.fw
 vendor/firmware/nanohub.full.catshark.20033010.bin
@@ -44,17 +70,37 @@ lib/libmmosal.so
 
 # Media-Hardware
 
-# Perf
-
 # Postprocessing
 lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
+vendor/lib/libdisp-aba.so
 
 # QMI
+
+# Qualcomm framework
+vendor/bin/irsc_util
+vendor/lib/libdiag.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_helper.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
+vendor/lib/libsmemlog.so
+vendor/lib/libsubsystem_control.so
 
 # Radio
 
 # Sensors
+
+# Thermal
+vendor/bin/thermal-engine
+vendor/lib/libthermalclient.so
 
 # Time
 -vendor/app/TimeService/TimeService.apk
@@ -63,6 +109,9 @@ vendor/bin/time_daemon
 vendor/lib/libTimeService.so
 
 # WiFi
+vendor/firmware/BCM43430B0.hcd
+vendor/firmware/fw_bcmdhd.bin
+vendor/firmware/fw_bcmdhd_apsta.bin
 
 # rootdir
 
