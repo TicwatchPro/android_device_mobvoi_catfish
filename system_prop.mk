@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Expect bootloader
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.expect.bootloader=catfish-37.33.31.33.39
+
 # LCD
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=280
