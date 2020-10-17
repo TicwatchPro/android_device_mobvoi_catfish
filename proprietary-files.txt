@@ -73,12 +73,12 @@ lib/libmmosal.so
 
 # Media-Hardware
 
+# NFC
+
 # Postprocessing
 lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
 vendor/lib/libdisp-aba.so
-
-# QMI
 
 # Qualcomm framework
 vendor/bin/irsc_util
@@ -100,6 +100,8 @@ vendor/lib/libsubsystem_control.so
 # Radio
 
 # Sensors
+vendor/lib/libhubconnection.so
+vendor/lib/hw/sensors.nanohub.so
 
 # Thermal
 vendor/bin/thermal-engine
@@ -115,7 +117,5 @@ vendor/lib/libTimeService.so
 vendor/firmware/BCM43430B0.hcd
 vendor/firmware/fw_bcmdhd.bin
 vendor/firmware/fw_bcmdhd_apsta.bin
-
-# rootdir
 
 # Misc
