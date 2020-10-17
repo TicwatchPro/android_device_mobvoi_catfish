@@ -34,6 +34,9 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
+# DRM-Widevine
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+
 # Display-Hardware
 
 # Firmware
