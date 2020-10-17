@@ -13,5 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# LCD
 PRODUCT_PROPERTY_OVERRIDES += \
-    
+	ro.sf.lcd_density=280
