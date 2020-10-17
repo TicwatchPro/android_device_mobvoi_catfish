@@ -15,6 +15,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+TARGET_COPY_SYSTEM_ETC := $(TARGET_COPY_OUT_SYSTEM)/etc
+
 ############################################
 #                   etc                    #
 ############################################
@@ -97,6 +99,26 @@ LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+######################
+### init.qcom.modem_links.sh
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.modem_links.sh
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
+LOCAL_MODULE_PATH  := $(TARGET_COPY_SYSTEM_ETC)
+include $(BUILD_PREBUILT)
+
+######################
+### init.upgrade_nanohub_fw.sh
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.upgrade_nanohub_fw.sh
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
+LOCAL_MODULE_PATH  := $(TARGET_COPY_SYSTEM_ETC)
 include $(BUILD_PREBUILT)
 
 ############################################
