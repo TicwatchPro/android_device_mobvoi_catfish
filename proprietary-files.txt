@@ -39,6 +39,18 @@ vendor/lib/mediadrm/libdrmclearkeyplugin.so
 
 # Display-Hardware
 
+# Extractors
+lib/extractors/libaacextractor.so
+lib/extractors/libamrextractor.so
+lib/extractors/libflacextractor.so
+lib/extractors/libmidiextractor.so
+lib/extractors/libmkvextractor.so
+lib/extractors/libmp3extractor.so
+lib/extractors/libmp4extractor.so
+lib/extractors/libmpeg2extractor.so
+lib/extractors/liboggextractor.so
+lib/extractors/libwavextractor.so
+
 # Firmware
 vendor/firmware/it7259.cfg
 vendor/firmware/it7259.fw

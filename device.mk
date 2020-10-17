@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8909 \
     audio.r_submix.default
 
-# Audio configuration file
+# Audio configurations
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_effects.conf:$(TARGET_OUT_VENDOR_ETC)/audio_effects.conf \
     $(DEVICE_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_SYSTEM_ETC)/audio_platform_info.xml \
@@ -42,6 +42,12 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
+
+# Bluetooth configurations
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/bluetooth/bt_did.conf:$(TARGET_COPY_SYSTEM_ETC)/bluetooth/bt_did.conf \
+    $(DEVICE_PATH)/configs/bluetooth/bt_stack.conf:$(TARGET_COPY_SYSTEM_ETC)/bluetooth/bt_stack.conf \
+    $(DEVICE_PATH)/configs/bluetooth/bt_vendor.conf:$(TARGET_COPY_SYSTEM_ETC)/bluetooth/bt_vendor.conf
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 400
