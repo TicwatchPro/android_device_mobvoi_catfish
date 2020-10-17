@@ -67,7 +67,10 @@ TARGET_POWERHAL_VARIANT := qcom
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.catfish
 
+# SECCOMP
+BOARD_SECCOMP_POLICY += $(DEVICE_PATH)/seccomp_policy
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-06-01
 
-#-include vendor/mobvoi/catfish/BoardConfigVendor.mk
+-include vendor/mobvoi/catfish/BoardConfigVendor.mk
