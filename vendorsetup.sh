@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Keyboard
-PRODUCT_PACKAGES += \
-    LatinIME
-
-# System Properties
-#$(call inherit-product, device/mobvoi/catfish/system_prop.mk)
+for i in eng userdebug user; do
+	add_lunch_combo lineage_catfish-${i}
+done

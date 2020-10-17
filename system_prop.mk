@@ -13,9 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Keyboard
-PRODUCT_PACKAGES += \
-    LatinIME
-
-# System Properties
-#$(call inherit-product, device/mobvoi/catfish/system_prop.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    
