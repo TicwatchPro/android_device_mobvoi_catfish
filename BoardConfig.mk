@@ -68,4 +68,4 @@ TARGET_RIL_VARIANT := caf
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-06-01
 
--include vendor/mobvoi/catfish/BoardConfigVendor.mk
+#-include vendor/mobvoi/catfish/BoardConfigVendor.mk
