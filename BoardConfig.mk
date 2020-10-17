@@ -65,6 +65,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_RIL_VARIANT := caf
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.catfish
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-06-01
 
