@@ -8,8 +8,6 @@
 # Display-Hardware
 
 # Firmware
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
 vendor/firmware/BCM43430B0.hcd
 vendor/firmware/fw_bcmdhd.bin
 vendor/firmware/fw_bcmdhd_apsta.bin
@@ -22,6 +20,22 @@ vendor/firmware/nanohub.full.catshark.20033010.bin
 # GPS-Hardware
 
 # Graphics
+vendor/etc/firmware/a300_pfp.fw
+vendor/etc/firmware/a300_pm4.fw
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
+vendor/lib/egl/libQTapGLES.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/librs_adreno.so
 
 # Listen
 
