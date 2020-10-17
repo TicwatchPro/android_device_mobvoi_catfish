@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 400
+TARGET_SCREEN_WIDTH := 400
+
 # Keyboard
 PRODUCT_PACKAGES += \
     LatinIME
