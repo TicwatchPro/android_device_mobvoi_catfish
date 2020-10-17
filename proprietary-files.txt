@@ -43,6 +43,10 @@ lib/vendor.display.postproc@1.0.so
 # Sensors
 
 # Time
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+-vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
 
 # WiFi
 
