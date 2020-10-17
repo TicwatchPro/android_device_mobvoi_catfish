@@ -121,6 +121,9 @@ vendor/lib/libnetmgr.so
 vendor/lib/libqcmaputils.so
 
 # Sensors
+vendor/bin/nanoapp_cmd
+vendor/bin/nanoapp_hr_log
+vendor/bin/nanotool
 vendor/lib/libhubconnection.so
 vendor/lib/hw/sensors.nanohub.so
 
