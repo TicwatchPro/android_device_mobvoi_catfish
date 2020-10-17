@@ -1,0 +1,15 @@
+mcfg_sw/generic/china/cmcc/commerci/volte_op/mcfg_sw.mbn
+mcfg_sw/generic/china/cu/commerci/openmkt/mcfg_sw.mbn
+mcfg_sw/generic/china/ct/commerci/volte_op/mcfg_sw.mbn
+mcfg_sw/generic/na/verizon/cdmaless/mcfg_sw.mbn
+mcfg_sw/generic/common/row/commerci/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/uk/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/germany/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/spain/mcfg_sw.mbn
+mcfg_sw/generic/sea/twm/volte/mcfg_sw.mbn
+mcfg_sw/generic/sea/csl/volte/mcfg_sw.mbn
+mcfg_sw/generic/sea/tstar/volte/mcfg_sw.mbn
+mcfg_sw/generic/sea/smartfre/commerci/mcfg_sw.mbn
+mcfg_sw/generic/eu/telefoni/commerci/spain/mcfg_sw.mbn
+mcfg_sw/generic/sea/twm/volte/mcfg_sw.mbn
+mcfg_sw/generic/sea/ais/volte/thailand/mcfg_sw.mbn
