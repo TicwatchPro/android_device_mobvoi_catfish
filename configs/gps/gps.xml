@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/ glconfig.xsd" >
+  <!--HAL Confguration LogDirectory="/data/system/gps/log/" -->
+  <hal
+    PortName="lhd"
+    NvStorageDir="/data/system/gps/"
+    LogEnabled="false"
+    Log="FILE"
+    LogDirectoryMaxSizeMb="128"
+    LogLineThreshold="50000"
+    LogDirectory="/data/system/gps/log/gpsd"
+    CtrlPipe="/data/system/gps/glgpsctrl"
+    NmeaOutName="/data/system/gps/gpspipe"
+    WakeLock="geo"
+    HttpSyncLto="true"
+    LtoDir="/data/system/gps/"
+    LtoSyncThresholdDays="1"
+    AssertEnabled="true"
+    SuplEnable="false"
+    HulaEnable="false"
+  />
+
+  <gll
+    LogPriMask="LOG_INFO"
+    LogFacMask="LOG_NMEA"
+    OnChipLogPriMask="LOG_INFO"
+    OnChipLogFacMask="LOG_NMEA"
+    FrqPlan="FRQ_PLAN_26MHZ_2PPM"
+    RfType="GL_RF_47531_BRCM_EXT_LNA"
+    WarmStandbyTimeout1Seconds="10"
+    WarmStandbyTimeout2Seconds="15"
+    BreadcrumbMaxLocsToStore="100"
+    PvtBatchingMode="PvtOnly"
+    PsfRecoverJobsUponBadTime="true"
+  />
+
+  <gll_features
+    EnableLowPowerPmm="true"
+    EnableOnChipMiCtrl="true"
+  />
+<!-- *********************************************************************** -->
+<!-- List of jobs can be performed by the GNSS controller    -->
+
+<!-- Periodic Position Fix using default settings -->
+<job Id="Periodic">
+    <task>
+        <req_pos/>
+    </task>
+</job>
+
+<!-- AtlantaScenarios/GPS-Only-8Sats-Walk-2dot89ms-Square/SimPLEX_GPS-Only-8Sats-Walk-2dot89ms-Square/ -->
+<job Id="geofence">
+    <task>
+      <req_geofence FenceLatitude="33.75"   FenceLongitude="-84.389"  FenceRadius="100.0"/>
+      <req_geofence FenceLatitude="33.75"   FenceLongitude="-84.3833" FenceRadius="100.0"/>
+      <req_geofence FenceLatitude="33.7454" FenceLongitude="-84.389"  FenceRadius="100.0"/>
+      <req_geofence FenceLatitude="33.7454" FenceLongitude="-84.3833" FenceRadius="100.0"/>
+    </task>
+</job>
+
+<!-- This job must be performed before any systematic tests  -->
+<job Id="CollectAlmanac">
+    <task Repeat="1">
+        <startup
+            IgnoreOsc="true"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_pos ValidFix="800"/>
+    </task>
+</job>
+
+<!-- This job must be performed every time the GNSS simulator scenario is reset  -->
+<job Id="CollectEphemeris">
+    <task Repeat="1">
+        <startup
+            IgnoreOsc="true"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_pos ValidFix="200"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive cold starts -->
+<job Id="Cold_Starts">
+    <task Repeat="100">
+        <startup
+            IgnoreOsc="false"
+            IgnoreRamAlm="false"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive cold starts  -->
+
+<job Id="Simulator_Cold_Starts">
+    <task Repeat="100">
+        <startup
+            IgnoreOsc="false"
+            IgnoreRamAlm="false"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive warm starts
+    Stored ephemeris data is discarded before the start begins
+    This simulates GNSS receiver start after it was left off for more than 4 hours
+-->
+<job Id="Warm_Starts">
+    <task Repeat="100">
+        <startup IgnoreNav="true"/>
+        <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive far starts -->
+<job Id="Far_Starts">
+    <task Repeat="100">
+        <!-- Instructs GLL to Ignore all elements stored in NVRAM listed below -->
+        <startup
+            IgnoreNav="true"
+            PositionError="true"
+        />
+        <req_pos ValidFix="1" />
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive warm starts performed on GNSS simulator -->
+<job Id="Simulator_Warm_Starts">
+    <task Repeat="100">
+       <startup
+            IgnoreNav="true"
+       />
+       <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive lost (no ref position) starts  -->
+<job Id="Lost_Starts">
+    <task Repeat="100">
+       <startup
+            IgnorePosition="true"
+       />
+       <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive hot starts  -->
+<job Id="Hot_Starts">
+    <task Repeat="100">
+        <req_pos ValidFix="1"/>
+    </task>
+</job>
+
+<!-- This job performes series of single shot requests using the data stored
+      in NVRAM to simulate assistance data received from the network
+      The QoS parameters are set to maxmize the GNSS sensitivity
+-->
+<job Id="Assisted_Cold_Starts">
+    <task Repeat="100">
+        <startup
+            IgnoreRamAlm="true"
+        />
+        <asst>
+            <!--position Lat="-30.0" Lon="-50.0" Alt="50" /-->
+            <position Lat="33.7691" Lon="-84.4062" Alt="300" />
+            <!--position Lat="37.0" Lon="-122.0" Alt="50" /-->
+            <!--position Lat="37.26533652" Lon="-121.94128855" Alt="51.4" /-->
+        </asst>
+        <req_pos_single AccuracyMask="50" Timeout="30" />
+    </task>
+</job>
+
+<!-- This job performes series of single shot requests using the data stored
+      in NVRAM to simulate assistance data received from the network
+      The QoS parameters are set as it woudld be set by Spirent ULTS executing
+      3GPP TS performance tests.
+-->
+<job Id="3GPP_Assisted_Cold_Starts">
+    <task Repeat="100">
+        <startup
+            IgnoreRamAlm="true"
+        />
+        <asst>
+            <!--position Lat="-30.0" Lon="-50.0" Alt="50" /-->
+            <position Lat="33.7691" Lon="-84.4062" Alt="300" />
+            <!--position Lat="37.0" Lon="-122.0" Alt="50" /-->
+            <!--position Lat="37.26533652" Lon="-121.94128855" Alt="51.4" /-->
+        </asst>
+        <req_pos_single AccuracyMask="25" Timeout="20" />
+    </task>
+</job>
+
+<!-- Starts single-channel factory test mode.
+     The signal is expected to initially be in the range from -125 dBm to -142 dBm
+     with the frequency offset range from -2 ppm to +2 ppm for this mode to provide
+     reliable results.
+
+     The name Factory_High_SNR is legacy only. The recommended name is
+     Factory_Track_Test.
+-->
+<job Id="Factory_High_SNR">
+    <task Id="test" Repeat="1">
+        <startup
+            IgnoreOsc="true"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_ftest
+            Prn="1"
+            FactoryTestMode="GL_FACT_TEST_CONT"
+            FactoryTestItems="GL_FACT_TEST_WER"
+            AveragingIntervalSec="10"
+            DurationSec="60"
+        />
+    </task>
+</job>
+
+<job Id="Factory_Track_Test">
+    <task Id="test" Repeat="1">
+        <startup
+            IgnoreOsc="true"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_ftest
+            Prn="1"
+            FactoryTestMode="GL_FACT_TEST_CONT"
+            FactoryTestItems="GL_FACT_TEST_WER"
+            AveragingIntervalSec="10"
+            DurationSec="60"
+        />
+    </task>
+</job>
+
+<!-- This job is intended to be ran after the Factory_Track_Test job
+     It uses the TCXO offset stored in NVRAM during the Factory_Track_Test job.
+
+     This is a low-signal strength acquisition only test. It performs repeated
+     acquisitions but no tracking, hence it cannot be used to produce, for
+     example, WER measurements.
+-->
+<job Id="Factory_Low_SNR">
+    <task Id="test" Repeat="1">
+        <startup
+            IgnoreOsc="false"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_ftest
+            Prn="1"
+            FactoryTestMode="GL_FACT_TEST_CONT"
+            FactoryTestItems="GL_FACT_TEST_WER"
+            AveragingIntervalSec="10"
+            DurationSec="200"
+        />
+     </task>
+</job>
+<job Id="Factory_Low_SNR_Acquisition">
+    <task Id="test" Repeat="1">
+        <startup
+            IgnoreOsc="false"
+            IgnoreRamAlm="true"
+            IgnorePosition="true"
+            IgnoreNav="true"
+            IgnoreTime="true"
+        />
+        <req_ftest
+            Prn="1"
+            FactoryTestMode="GL_FACT_TEST_CONT"
+            FactoryTestItems="GL_FACT_TEST_WER"
+            DurationSec="200"
+        />
+    </task>
+</job>
+
+<job Id="spa-gps">
+    <task Id="-">
+     <req_freq_scan
+          ResolutionBandwidthHz="100"
+            VideoBandwidthHz="10"
+            InitL1OffsetHz="-4000000"
+            EndL1OffsetHz=" 4000000"
+            Band="GL_FACT_TEST_BAND_GPS"
+     />
+  </task>
+</job>
+
+<job Id="spa-gln">
+     <task Id="-">
+        <req_freq_scan
+        ResolutionBandwidthHz="100"
+            VideoBandwidthHz="10"
+            InitL1OffsetHz="-4000000"
+            EndL1OffsetHz=" 4000000"
+            Band="GL_FACT_TEST_BAND_GLONASS"
+        />
+  </task>
+</job>
+
+<job Id="spa-bds">
+    <task Id="-">
+        <req_freq_scan
+            ResolutionBandwidthHz="100"
+            VideoBandwidthHz="10"
+            InitL1OffsetHz="-4000000"
+            EndL1OffsetHz=" 4000000"
+            Band="GL_FACT_TEST_BAND_BDS"
+        />
+    </task>
+</job>
+
+<job Id="breadcrumb">
+    <task Id="breadcrumb-30S" Repeat="1">
+        <req_breadcrumb
+            BreadCrumbPeriodS="1"
+            BreadCrumbWakeUpOnFifoFull="false"
+            BreadCrumbReportAllFixes="false"
+            DurationSec="300"
+        />
+    </task>
+</job>
+
+<job id="Factory_GPS_CW_Test">
+        <task id="test" repeat="1">
+            <startup
+                IgnoreOsc="true"
+                IgnoreRomAlm="true"
+                IgnoreRamAlm="true"
+                IgnorePosition="true"
+                IgnoreNav="true"
+                IgnoreTime="true"
+           />
+            <req_ftest
+                PRN="1"
+                FactoryTestItems="GL_FACT_TEST_CW"
+                FactoryTestMode="GL_FACT_TEST_ONCE"
+                AveragingIntervalSec="10"
+                DurationSec="60"
+           />
+        </task>
+</job>
+
+</glgps>
