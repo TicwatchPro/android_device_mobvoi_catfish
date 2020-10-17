@@ -35,8 +35,15 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_USES_OVERLAY := true
+TARGET_INIT_VENDOR_LIB := libinit_msm8909
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8909
+
+# Kernel
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE := androidboot.hardware=catfish msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 firmware_class.path=/vendor/firmware_mnt/image console=null androidboot.console=null
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET := 0x01000000
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8909
