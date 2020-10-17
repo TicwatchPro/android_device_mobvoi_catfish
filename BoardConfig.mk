@@ -16,6 +16,14 @@
 DEVICE_PATH := device/mobvoi/catfish
 BOARD_VENDOR := mobvoi
 
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
+TARGET_CPU_VARIANT := cortex-a7
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -25,6 +33,20 @@ BLUETOOTH_HCI_USE_MCT := true
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+
+# Init
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_USES_OVERLAY := true
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8909
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
+
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QC_TIME_SERVICES := true
+TARGET_POWERHAL_VARIANT := qcom
+TARGET_RIL_VARIANT := caf
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-06-01
