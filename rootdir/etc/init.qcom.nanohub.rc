@@ -1,0 +1,32 @@
+on post-fs
+    ## ensure correct calibration file permissions
+    chown system system /persist/sensorcal.json
+    chmod 0640 /persist/sensorcal.json
+    chown system system /data/vendor/sensor/sensorcal_saved.json
+    start upgrade-nanohub
+
+on post-fs-data
+    mkdir /data/vendor/sensor
+    mkdir /data/vendor/sensor/nanohub_lock
+    chown root system /data/vendor/sensor
+    chmod 0770 /data/vendor/sensor
+    chmod 0640 /data/vendor/sensor/sensorcal_saved.json
+    restorecon /data/vendor/sensor/nanohub_lock
+    chown system system /data/vendor/sensor/nanohub_lock
+
+on boot
+    # Exec init.foreground.sh in background
+    start foreground_sh
+
+service upgrade-nanohub /vendor/bin/nanoapp_cmd "download"
+    oneshot
+    disabled
+    user root
+    group root system shell
+
+service foreground_sh /vendor/bin/init.foreground.sh
+    class main
+    user root
+    group root system readproc
+    disabled
+    oneshot

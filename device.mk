@@ -53,7 +53,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     init.foreground.sh \
-    init.qcom.audio.sh
+    init.qcom.audio.sh \
+    init.qcom.nanohub.rc \
+    init.usb.configfs.rc \
+    ueventd.catfish.rc
 
 # Wi-Fi configurations
 PRODUCT_COPY_FILES += \
