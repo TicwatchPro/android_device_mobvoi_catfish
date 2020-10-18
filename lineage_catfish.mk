@@ -19,6 +19,9 @@ $(call inherit-product, vendor/lineage/config/common_mini.mk)
 # Inherit launched with Oreo
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
+# Inherit common config stuff
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
 # Inherit from catfish device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
