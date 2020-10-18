@@ -43,9 +43,9 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_catfish
+TARGET_INIT_VENDOR_LIB := libinit_msm8909
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_RECOVERY_DEVICE_MODULES := libinit_catfish
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8909
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=catfish msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1

@@ -25,12 +25,12 @@ PRODUCT_PACKAGES += \
 
 # Audio configurations
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/audio_effects.conf:$(TARGET_OUT_VENDOR_ETC)/audio_effects.conf \
+    $(DEVICE_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     $(DEVICE_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_platform_info.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy.conf:$(TARGET_OUT_VENDOR_ETC)/audio_policy.conf \
-    $(DEVICE_PATH)/configs/audio/mixer_paths_msm8909_pm8916.xml:$(TARGET_OUT_VENDOR_ETC)/mixer_paths_msm8909_pm8916.xml \
-    $(DEVICE_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_OUT_VENDOR_ETC)/sound_trigger_mixer_paths.xml \
-    $(DEVICE_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_OUT_VENDOR_ETC)/sound_trigger_platform_info.xml
+    $(DEVICE_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    $(DEVICE_PATH)/configs/audio/mixer_paths_msm8909_pm8916.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_msm8909_pm8916.xml \
+    $(DEVICE_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
+    $(DEVICE_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -76,8 +76,8 @@ PRODUCT_PACKAGES += \
 
 # GPS configurations
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/gps/gps.conf:$(TARGET_OUT_VENDOR_ETC)/gps.conf \
-    $(DEVICE_PATH)/configs/gps/gps.xml:$(TARGET_OUT_VENDOR_ETC)/gps.xml
+    $(DEVICE_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    $(DEVICE_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
 
 # Kernel headers
 PRODUCT_VENDOR_KERNEL_HEADERS := $(DEVICE_PATH)/kernel-headers/kernel-headers
@@ -117,8 +117,8 @@ PRODUCT_PACKAGES += \
 
 # NFC configurations
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/nfc/libnfc-hal-st.conf:$(TARGET_OUT_VENDOR_ETC)/libnfc-hal-st.conf \
-    $(DEVICE_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_OUT_VENDOR_ETC)/libnfc-nci.conf \
+    $(DEVICE_PATH)/configs/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
+    $(DEVICE_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
@@ -167,10 +167,10 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi configurations
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/wifi/bcmdhd.cal:$(TARGET_OUT_VENDOR_ETC)/wifi/bcmdhd.cal \
-    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_OUT_VENDOR_ETC)/wifi/p2p_supplicant_overlay.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_OUT_VENDOR_ETC)/wifi/wpa_supplicant.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_OUT_VENDOR_ETC)/wifi/wpa_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal \
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 
 # System Properties
 $(call inherit-product, device/mobvoi/catfish/system_prop.mk)
