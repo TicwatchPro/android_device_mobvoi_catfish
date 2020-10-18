@@ -43,8 +43,6 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth configurations
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/bluetooth/bt_did.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_did.conf \
-    $(DEVICE_PATH)/configs/bluetooth/bt_stack.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_stack.conf \
     $(DEVICE_PATH)/configs/bluetooth/bt_vendor.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_vendor.conf
 
 # Boot animation
@@ -103,8 +101,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_telephony.xml \
-    $(DEVICE_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
-    $(DEVICE_PATH)/configs/media/media_profiles_V1_0.dtd:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_V1_0.dtd
+    $(DEVICE_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -155,7 +152,6 @@ PRODUCT_PACKAGES += \
     init.foreground.sh \
     init.qcom.audio.sh \
     init.qcom.nanohub.rc \
-    init.usb.configfs.rc \
     ueventd.catfish.rc
 
 # Wi-Fi
