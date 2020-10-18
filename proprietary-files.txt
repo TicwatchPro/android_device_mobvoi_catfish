@@ -24,7 +24,7 @@ vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libreverbwrapper.so
-vendor/lib/soundfx/libreverbwrapper.so
+
 
 # DRM
 vendor/bin/qseecomd
@@ -33,9 +33,6 @@ vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-
-# DRM-Widevine
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 
 # Display-Hardware
 
