@@ -54,15 +54,14 @@ lib/extractors/libwavextractor.so
 # Firmware
 vendor/firmware/it7259.cfg
 vendor/firmware/it7259.fw
-vendor/firmware/nanohub.full.catshark.20033010.bin
 
 # GPS
 
 # GPS-Hardware
 
 # Graphics
-vendor/etc/firmware/a300_pfp.fw
-vendor/etc/firmware/a300_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -77,6 +76,14 @@ vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/librs_adreno.so
+
+# Graphics (Hardware)
+vendor/lib/libsdmcore.so
+
+# Graphics (SDM) 
+vendor/lib/libsdm-diag.so
+vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libsdmextension.so
 
 # Listen
 
@@ -119,6 +126,7 @@ vendor/lib/libconfigdb.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libnetmgr.so
 vendor/lib/libqcmaputils.so
+vendor/lib/libxml.so
 
 # Sensors
 vendor/bin/nanoapp_cmd
@@ -126,6 +134,7 @@ vendor/bin/nanoapp_hr_log
 vendor/bin/nanotool
 vendor/lib/libhubconnection.so
 vendor/lib/hw/sensors.nanohub.so
+vendor/firmware/nanohub.full.catshark.20033010.bin
 
 # Thermal
 vendor/bin/thermal-engine
