@@ -61,6 +61,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    copybit.msm8909 \
     gralloc.msm8909 \
     hwcomposer.msm8909 \
     memtrack.msm8909
@@ -79,6 +80,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/gps.conf:$(TARGET_OUT_VENDOR_ETC)/gps.conf \
     $(DEVICE_PATH)/configs/gps/gps.xml:$(TARGET_OUT_VENDOR_ETC)/gps.xml
+
+# Kernel headers
+PRODUCT_VENDOR_KERNEL_HEADERS := $(DEVICE_PATH)/kernel-headers/kernel-headers
+PRODUCT_PROPERTY_OVERRIDES += \
+  debug.composition.type=dyn \
+  debug.hwc.dynThreshold=4.5 \
+  debug.sf.hwc.canUseABC=1 \
+  debug.sf.disable_backpressure=1 \
+  debug.sf.latch_unsignaled=1 \
 
 # Keyboard
 PRODUCT_PACKAGES += \
