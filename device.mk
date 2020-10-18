@@ -154,6 +154,14 @@ PRODUCT_PACKAGES += \
     init.qcom.nanohub.rc \
     ueventd.catfish.rc
 
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk_package
+
+# VNDK-SP
+PRODUCT_PACKAGES += \
+    vndk-sp
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-impl \

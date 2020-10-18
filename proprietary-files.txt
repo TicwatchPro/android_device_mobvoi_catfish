@@ -25,7 +25,6 @@ vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libreverbwrapper.so
 
-
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libdrmfs.so
@@ -72,7 +71,12 @@ vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libllvm-glnext.so
 vendor/lib/librs_adreno.so
+
+# Graphics (Gralloc)
+vendor/lib/libui.so
+vendor/lib/libbinder.so
 
 # Graphics (Hardware)
 vendor/lib/libsdmcore.so
