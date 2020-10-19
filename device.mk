@@ -78,13 +78,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
 
 # Kernel headers
-PRODUCT_VENDOR_KERNEL_HEADERS := $(DEVICE_PATH)/kernel-headers/kernel-headers
-PRODUCT_PROPERTY_OVERRIDES += \
-  debug.composition.type=dyn \
-  debug.hwc.dynThreshold=4.5 \
-  debug.sf.hwc.canUseABC=1 \
-  debug.sf.disable_backpressure=1 \
-  debug.sf.latch_unsignaled=1 \
+$(call inherit-product, hardware/qcom/msm8x09/msm8x09.mk)
 
 # Keyboard
 PRODUCT_PACKAGES += \
