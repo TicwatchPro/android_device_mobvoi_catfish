@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
 
 # Kernel headers
-$(call inherit-product, hardware/qcom/msm8x09/msm8x09.mk)
+include hardware/qcom/msm8x09/msm8x09.mk
 
 # Keyboard
 PRODUCT_PACKAGES += \

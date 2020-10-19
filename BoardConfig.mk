@@ -53,7 +53,7 @@ BOARD_KERNEL_IMAGE_NAME  := zImage-dtb
 TARGET_PREBUILT_KERNEL   := $(DEVICE_PATH)/zImage-dtb
 
 # Kernel headers
-$(call inherit-product, hardware/qcom/msm8x09/BoardConfigCommon.mk)
+include hardware/qcom/msm8x09/BoardConfigCommon.mk
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
